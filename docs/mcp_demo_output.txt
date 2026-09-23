@@ -1,0 +1,215 @@
+tools: model_summary, list_elements, get_element, quantity_takeoff, space_schedule, validate_quantities, detect_clashes, check_natural_ventilation, write_qa_report
+
+=== model_summary
+{
+ "file": "sample_house.ifc",
+ "schema": "IFC4",
+ "project": "Sample House",
+ "units": {
+  "LENGTHUNIT": "METRE",
+  "AREAUNIT": "SQUARE_METRE",
+  "VOLUMEUNIT": "CUBIC_METRE"
+ },
+ "length_unit_to_metre": 1.0,
+ "entity_count": 761,
+ "storeys": [
+  {
+   "name": "Ground Floor",
+   "guid": "1LKNbHdibMdw_VPXroFQB0",
+   "elevation": 0.0
+  },
+  {
+   "name": "First Floor",
+   "guid": "3ZKtq8Rx1T5eIKi6uwKbc1",
+   "elevation": 3.2
+  }
+ ],
+ "spaces": 4,
+ "elements_by_type": {
+  "IFCWALL": 11,
+  "IFCWINDOW": 8,
+  "IFCDOOR": 3,
+  "IFCSLAB": 3,
+  "IFCBEAM": 1,
+  "IFCDUCTSEGMENT": 1,
+  "IFCPIPESEGMENT": 1
+ },
+ "elements_without_geometry": 0,
+ "geometry_notes": {}
+}
+
+=== MEP vs structure clashes (50 mm clearance)
+{
+ "settings": {
+  "group_a": [
+   "IFCDUCTSEGMENT",
+   "IFCPIPESEGMENT"
+  ],
+  "group_b": [
+   "IFCBEAM",
+   "IFCSLAB",
+   "IFCWALL"
+  ],
+  "tolerance_m": 0.01,
+  "clearance_m": 0.05
+ },
+ "pairs_tested": 3,
+ "summary": {
+  "duplicate": 0,
+  "hard": 1,
+  "clearance": 1
+ },
+ "clashes": [
+  {
+   "kind": "hard",
+   "a": {
+    "id": 670,
+    "guid": "32wAyrDUTJQ9lI3ze_fOwA",
+    "type": "IFCDUCTSEGMENT",
+    "name": "Duct SA-01 400x300",
+    "tag": "SA-01",
+    "storey": "Ground Floor",
+    "predefined_type": "RIGIDSEGMENT",
+    "type_name": null
+   },
+   "b": {
+    "id": 148,
+    "guid": "2LxwY5FcfSLwdYfKsH_GYE",
+    "type": "IFCWALL",
+    "name": "Wall GF-E",
+    "tag": "GF-E",
+    "storey": "Ground Floor",
+    "predefined_type": "STANDARD",
+    "type_name": null
+   },
+   "penetration_m": 0.2,
+   "location": [
+    9.9,
+    2.0,
+    2.75
+   ],
+   "approximate_geometry": false
+  },
+  {
+   "kind": "clearance",
+   "a": {
+    "id": 654,
+    "guid": "1qEmaPtnXRkBO_MpEJDTbM",
+    "type": "IFCBEAM",
+    "name": "Beam B1 300x500",
+    "tag": "B1",
+    "storey": "Ground Floor",
+    "predefined_type": "BEAM",
+    "type_name": null
+   },
+   "b": {
+    "id": 685,
+    "guid": "3Kg1_kcQPUDAkpcal9vhBw",
+    "type": "IFCPIPESEGMENT",
+    "name": "Pipe CW-01 DN100",
+    "tag": "CW-01",
+    "storey": "Ground Floor",
+    "predefined_type": "RIGIDSEGMENT",
+    "type_name": null
+   },
+   "gap_m": 0.0296,
+   "location": [
+    3.0,
+    4.0,
+    2.485
+   ],
+   "approximate_geometry": false
+  }
+ ],
+ "tr
+
+=== natural ventilation (HK B(P)R)
+{
+ "rules": {
+  "min_glazing_ratio": 0.1,
+  "min_openable_ratio": 0.0625,
+  "source": "HK Building (Planning) Regulations 30/31 prescriptive route",
+  "preset": "hk_bpr",
+  "default_openable_ratio": 0.5,
+  "depth_rule": "CIBSE AM10: single-sided <= 2.5H, cross <= 5H",
+  "airflow": "BS 5925 single-sided, U=3.0 m/s, dT=3.0 K"
+ },
+ "summary": {
+  "spaces": 4,
+  "pass": 2,
+  "fail": 2
+ },
+ "spaces": [
+  {
+   "space": {
+    "id": 698,
+    "guid": "1RGyUo22bUbBG6oI5GOfKc",
+    "type": "IFCSPACE",
+    "name": "Living",
+    "tag": "Living",
+    "storey": "Ground Floor",
+    "predefined_type": "INTERNAL",
+    "type_name": null
+   },
+   "long_name": "Living",
+   "floor_area_m2": 44.08,
+   "height_m": 3.0,
+   "windows": [
+    {
+     "name": "Win L1",
+     "guid": "0ckW1RWTrOMOjvhYLlFcEg",
+     "facade": "S",
+     "area_m2": 2.7,
+     "openable_ratio": 0.5,
+     "openable_source": "window type panels: sidehunglefthand+fixedcasement",
+     "openable_m2": 1.35
+    },
+    {
+     "name": "Win L2",
+     "guid": "11e7P1zRzKjh7QeveQsz23",
+     "facade": "S",
+     "area_m2": 2.7,
+     "openable_ratio": 0.5,
+     "openable_source": "window type panels: slidinghorizontal+slidinghorizontal",
+     "openable_m2": 1.35
+    },
+    {
+     "name": "Win L3",
+     "guid": "1tFFA0SjXL3QrfeK73auka",
+     "facade": "W",
+     "area_m2": 1.8,
+     "openable_ratio": 0.5,
+     "openable_source": "window type panels: sidehunglefthand+fixedcasement",
+     "openable_m2": 0.9
+    }
+   ],
+   "facades": [
+    "S",
+    
+
+failing spaces: ['Kitchen', 'Bedroom 1']
+
+=== validate_quantities
+{
+ "checked": 14,
+ "tolerance_pct": 5.0,
+ "discrepancies": [
+  {
+   "element": {
+    "id": 110,
+    "guid": "1JwCBls11GMuComxzUuIMY",
+    "type": "IFCWALL",
+    "name": "Wall GF-N",
+    "tag": "GF-N",
+    "storey": "Ground Floor",
+    "predefined_type": "STANDARD",
+    "type_name": null
+   },
+   "qto_set": "Qto_WallBaseQuantities",
+   "quantity": "NetVolume",
+   "authored": 6.6,
+   "computed": 5.712,
+   "difference_pct": 15.5
+  }
+ ]
+}

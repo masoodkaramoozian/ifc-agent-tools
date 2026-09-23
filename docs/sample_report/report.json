@@ -1,0 +1,537 @@
+{
+  "summary": {
+    "file": "sample_house.ifc",
+    "schema": "IFC4",
+    "project": "Sample House",
+    "units": {
+      "LENGTHUNIT": "METRE",
+      "AREAUNIT": "SQUARE_METRE",
+      "VOLUMEUNIT": "CUBIC_METRE"
+    },
+    "length_unit_to_metre": 1.0,
+    "entity_count": 761,
+    "storeys": [
+      {
+        "name": "Ground Floor",
+        "guid": "1LKNbHdibMdw_VPXroFQB0",
+        "elevation": 0.0
+      },
+      {
+        "name": "First Floor",
+        "guid": "3ZKtq8Rx1T5eIKi6uwKbc1",
+        "elevation": 3.2
+      }
+    ],
+    "spaces": 4,
+    "elements_by_type": {
+      "IFCWALL": 11,
+      "IFCWINDOW": 8,
+      "IFCDOOR": 3,
+      "IFCSLAB": 3,
+      "IFCBEAM": 1,
+      "IFCDUCTSEGMENT": 1,
+      "IFCPIPESEGMENT": 1
+    },
+    "elements_without_geometry": 0,
+    "geometry_notes": {}
+  },
+  "quantities": {
+    "group_by": "type",
+    "units": {
+      "length": "m",
+      "area": "m2",
+      "volume": "m3"
+    },
+    "groups": {
+      "IFCBEAM": {
+        "count": 1.0,
+        "gross_volume": 1.44,
+        "length": 9.6
+      },
+      "IFCDOOR": {
+        "count": 3.0,
+        "gross_volume": 0.588,
+        "area": 5.88
+      },
+      "IFCDUCTSEGMENT": {
+        "count": 1.0,
+        "gross_volume": 0.588,
+        "length": 4.9
+      },
+      "IFCPIPESEGMENT": {
+        "count": 1.0,
+        "gross_volume": 0.058,
+        "length": 7.4
+      },
+      "IFCSLAB": {
+        "count": 3.0,
+        "gross_volume": 48.0,
+        "net_volume": 48.0,
+        "area": 240.0
+      },
+      "IFCWALL": {
+        "count": 11.0,
+        "gross_volume": 49.08,
+        "net_volume": 44.814,
+        "length": 93.2,
+        "net_side_area": 256.38,
+        "gross_side_area": 279.6
+      },
+      "IFCWINDOW": {
+        "count": 8.0,
+        "gross_volume": 1.734,
+        "area": 17.34
+      }
+    }
+  },
+  "qto_validation": {
+    "checked": 14,
+    "tolerance_pct": 5.0,
+    "discrepancies": [
+      {
+        "element": {
+          "id": 110,
+          "guid": "1JwCBls11GMuComxzUuIMY",
+          "type": "IFCWALL",
+          "name": "Wall GF-N",
+          "tag": "GF-N",
+          "storey": "Ground Floor",
+          "predefined_type": "STANDARD",
+          "type_name": null
+        },
+        "qto_set": "Qto_WallBaseQuantities",
+        "quantity": "NetVolume",
+        "authored": 6.6,
+        "computed": 5.712,
+        "difference_pct": 15.5
+      }
+    ]
+  },
+  "clashes": {
+    "settings": {
+      "group_a": "ALL",
+      "group_b": "ALL",
+      "tolerance_m": 0.01,
+      "clearance_m": 0.05
+    },
+    "pairs_tested": 48,
+    "summary": {
+      "duplicate": 1,
+      "hard": 3,
+      "clearance": 1
+    },
+    "clashes": [
+      {
+        "kind": "duplicate",
+        "a": {
+          "id": 258,
+          "guid": "0$9e9I6dPOUOPdAimsr0$m",
+          "type": "IFCWALL",
+          "name": "Wall 1F-INT",
+          "tag": "1F-INT",
+          "storey": "First Floor",
+          "predefined_type": "STANDARD",
+          "type_name": null
+        },
+        "b": {
+          "id": 277,
+          "guid": "2S3j3$SGDRxglDRchY4jfl",
+          "type": "IFCWALL",
+          "name": "Wall 1F-INT (copy)",
+          "tag": "1F-INT",
+          "storey": "First Floor",
+          "predefined_type": "STANDARD",
+          "type_name": null
+        },
+        "penetration_m": 0.1,
+        "location": [
+          5.05,
+          4.0,
+          4.7
+        ],
+        "approximate_geometry": false
+      },
+      {
+        "kind": "hard",
+        "a": {
+          "id": 670,
+          "guid": "32wAyrDUTJQ9lI3ze_fOwA",
+          "type": "IFCDUCTSEGMENT",
+          "name": "Duct SA-01 400x300",
+          "tag": "SA-01",
+          "storey": "Ground Floor",
+          "predefined_type": "RIGIDSEGMENT",
+          "type_name": null
+        },
+        "b": {
+          "id": 148,
+          "guid": "2LxwY5FcfSLwdYfKsH_GYE",
+          "type": "IFCWALL",
+          "name": "Wall GF-E",
+          "tag": "GF-E",
+          "storey": "Ground Floor",
+          "predefined_type": "STANDARD",
+          "type_name": null
+        },
+        "penetration_m": 0.2,
+        "location": [
+          9.9,
+          2.0,
+          2.75
+        ],
+        "approximate_geometry": false
+      },
+      {
+        "kind": "hard",
+        "a": {
+          "id": 654,
+          "guid": "1qEmaPtnXRkBO_MpEJDTbM",
+          "type": "IFCBEAM",
+          "name": "Beam B1 300x500",
+          "tag": "B1",
+          "storey": "Ground Floor",
+          "predefined_type": "BEAM",
+          "type_name": null
+        },
+        "b": {
+          "id": 167,
+          "guid": "1tPUqi0vDU5e7XjN$STsfj",
+          "type": "IFCWALL",
+          "name": "Wall GF-INT",
+          "tag": "GF-INT",
+          "storey": "Ground Floor",
+          "predefined_type": "STANDARD",
+          "type_name": null
+        },
+        "penetration_m": 0.1,
+        "location": [
+          6.05,
+          4.0,
+          2.75
+        ],
+        "approximate_geometry": false
+      },
+      {
+        "kind": "hard",
+        "a": {
+          "id": 636,
+          "guid": "1DyWETpQ9RwwiFEanesGQW",
+          "type": "IFCDOOR",
+          "name": "Door 1F-INT",
+          "tag": "1F-INT",
+          "storey": "First Floor",
+          "predefined_type": "DOOR",
+          "type_name": null
+        },
+        "b": {
+          "id": 277,
+          "guid": "2S3j3$SGDRxglDRchY4jfl",
+          "type": "IFCWALL",
+          "name": "Wall 1F-INT (copy)",
+          "tag": "1F-INT",
+          "storey": "First Floor",
+          "predefined_type": "STANDARD",
+          "type_name": null
+        },
+        "penetration_m": 0.1,
+        "location": [
+          5.05,
+          1.65,
+          4.25
+        ],
+        "approximate_geometry": false
+      },
+      {
+        "kind": "clearance",
+        "a": {
+          "id": 654,
+          "guid": "1qEmaPtnXRkBO_MpEJDTbM",
+          "type": "IFCBEAM",
+          "name": "Beam B1 300x500",
+          "tag": "B1",
+          "storey": "Ground Floor",
+          "predefined_type": "BEAM",
+          "type_name": null
+        },
+        "b": {
+          "id": 685,
+          "guid": "3Kg1_kcQPUDAkpcal9vhBw",
+          "type": "IFCPIPESEGMENT",
+          "name": "Pipe CW-01 DN100",
+          "tag": "CW-01",
+          "storey": "Ground Floor",
+          "predefined_type": "RIGIDSEGMENT",
+          "type_name": null
+        },
+        "gap_m": 0.0296,
+        "location": [
+          3.0,
+          4.0,
+          2.485
+        ],
+        "approximate_geometry": false
+      }
+    ],
+    "truncated": false
+  },
+  "ventilation": {
+    "rules": {
+      "min_glazing_ratio": 0.1,
+      "min_openable_ratio": 0.0625,
+      "source": "HK Building (Planning) Regulations 30/31 prescriptive route",
+      "preset": "hk_bpr",
+      "default_openable_ratio": 0.5,
+      "depth_rule": "CIBSE AM10: single-sided <= 2.5H, cross <= 5H",
+      "airflow": "BS 5925 single-sided, U=3.0 m/s, dT=3.0 K"
+    },
+    "summary": {
+      "spaces": 4,
+      "pass": 2,
+      "fail": 2
+    },
+    "spaces": [
+      {
+        "space": {
+          "id": 698,
+          "guid": "1RGyUo22bUbBG6oI5GOfKc",
+          "type": "IFCSPACE",
+          "name": "Living",
+          "tag": "Living",
+          "storey": "Ground Floor",
+          "predefined_type": "INTERNAL",
+          "type_name": null
+        },
+        "long_name": "Living",
+        "floor_area_m2": 44.08,
+        "height_m": 3.0,
+        "windows": [
+          {
+            "name": "Win L1",
+            "guid": "0ckW1RWTrOMOjvhYLlFcEg",
+            "facade": "S",
+            "area_m2": 2.7,
+            "openable_ratio": 0.5,
+            "openable_source": "window type panels: sidehunglefthand+fixedcasement",
+            "openable_m2": 1.35
+          },
+          {
+            "name": "Win L2",
+            "guid": "11e7P1zRzKjh7QeveQsz23",
+            "facade": "S",
+            "area_m2": 2.7,
+            "openable_ratio": 0.5,
+            "openable_source": "window type panels: slidinghorizontal+slidinghorizontal",
+            "openable_m2": 1.35
+          },
+          {
+            "name": "Win L3",
+            "guid": "1tFFA0SjXL3QrfeK73auka",
+            "facade": "W",
+            "area_m2": 1.8,
+            "openable_ratio": 0.5,
+            "openable_source": "window type panels: sidehunglefthand+fixedcasement",
+            "openable_m2": 0.9
+          }
+        ],
+        "facades": [
+          "S",
+          "W"
+        ],
+        "checks": {
+          "glazing_area": {
+            "provided_m2": 7.2,
+            "required_m2": 4.408,
+            "pass": true
+          },
+          "openable_area": {
+            "provided_m2": 3.6,
+            "required_m2": 2.755,
+            "pass": true
+          },
+          "room_depth": {
+            "mode": "corner",
+            "depth_m": 5.8,
+            "limit_m": 7.5,
+            "pass": true
+          }
+        },
+        "indicative_ach": 7.67,
+        "pass": true,
+        "uses_assumptions": false
+      },
+      {
+        "space": {
+          "id": 716,
+          "guid": "35CHGFntLPcR$LYq1rAynK",
+          "type": "IFCSPACE",
+          "name": "Kitchen",
+          "tag": "Kitchen",
+          "storey": "Ground Floor",
+          "predefined_type": "INTERNAL",
+          "type_name": null
+        },
+        "long_name": "Kitchen",
+        "floor_area_m2": 28.12,
+        "height_m": 3.0,
+        "windows": [
+          {
+            "name": "Win K1",
+            "guid": "04aWLq4uLUbgRxJqIRuzZa",
+            "facade": "N",
+            "area_m2": 1.44,
+            "openable_ratio": 0.5,
+            "openable_source": "window type panels: sidehunglefthand+fixedcasement",
+            "openable_m2": 0.72
+          }
+        ],
+        "facades": [
+          "N"
+        ],
+        "checks": {
+          "glazing_area": {
+            "provided_m2": 1.44,
+            "required_m2": 2.812,
+            "pass": false
+          },
+          "openable_area": {
+            "provided_m2": 0.72,
+            "required_m2": 1.758,
+            "pass": false
+          },
+          "room_depth": {
+            "mode": "single-sided",
+            "depth_m": 7.6,
+            "limit_m": 7.5,
+            "pass": false
+          }
+        },
+        "indicative_ach": 2.3,
+        "pass": false,
+        "uses_assumptions": false
+      },
+      {
+        "space": {
+          "id": 734,
+          "guid": "20T6ZR7vzJ7xc6b9JPxGWE",
+          "type": "IFCSPACE",
+          "name": "Bedroom 1",
+          "tag": "Bedroom 1",
+          "storey": "First Floor",
+          "predefined_type": "INTERNAL",
+          "type_name": null
+        },
+        "long_name": "Bedroom 1",
+        "floor_area_m2": 36.48,
+        "height_m": 3.0,
+        "windows": [
+          {
+            "name": "Win B1a",
+            "guid": "0AN8iykGPGSfsOVGkHo1K8",
+            "facade": "S",
+            "area_m2": 3.84,
+            "openable_ratio": 0.0,
+            "openable_source": "window type panels: fixedcasement",
+            "openable_m2": 0.0
+          },
+          {
+            "name": "Win B1b",
+            "guid": "1v42SRS_zVr9E9tXb_iQUC",
+            "facade": "W",
+            "area_m2": 0.36,
+            "openable_ratio": 1.0,
+            "openable_source": "window type panels: tophung",
+            "openable_m2": 0.36
+          }
+        ],
+        "facades": [
+          "S",
+          "W"
+        ],
+        "checks": {
+          "glazing_area": {
+            "provided_m2": 4.2,
+            "required_m2": 3.648,
+            "pass": true
+          },
+          "openable_area": {
+            "provided_m2": 0.36,
+            "required_m2": 2.28,
+            "pass": false
+          },
+          "room_depth": {
+            "mode": "corner",
+            "depth_m": 4.8,
+            "limit_m": 7.5,
+            "pass": true
+          }
+        },
+        "indicative_ach": 0.89,
+        "pass": false,
+        "uses_assumptions": false
+      },
+      {
+        "space": {
+          "id": 752,
+          "guid": "3iFJYvqF5JzBtDCp3aHOkw",
+          "type": "IFCSPACE",
+          "name": "Bedroom 2",
+          "tag": "Bedroom 2",
+          "storey": "First Floor",
+          "predefined_type": "INTERNAL",
+          "type_name": null
+        },
+        "long_name": "Bedroom 2",
+        "floor_area_m2": 35.72,
+        "height_m": 3.0,
+        "windows": [
+          {
+            "name": "Win B2a",
+            "guid": "2lkjvATH1JkfaieAOba67c",
+            "facade": "E",
+            "area_m2": 2.25,
+            "openable_ratio": 0.5,
+            "openable_source": "window type panels: slidinghorizontal+slidinghorizontal",
+            "openable_m2": 1.125
+          },
+          {
+            "name": "Win B2b",
+            "guid": "0f2EWjXi1SKfCfYo7VMxsB",
+            "facade": "S",
+            "area_m2": 2.25,
+            "openable_ratio": 0.5,
+            "openable_source": "window type panels: slidinghorizontal+slidinghorizontal",
+            "openable_m2": 1.125
+          }
+        ],
+        "facades": [
+          "E",
+          "S"
+        ],
+        "checks": {
+          "glazing_area": {
+            "provided_m2": 4.5,
+            "required_m2": 3.572,
+            "pass": true
+          },
+          "openable_area": {
+            "provided_m2": 2.25,
+            "required_m2": 2.232,
+            "pass": true
+          },
+          "room_depth": {
+            "mode": "corner",
+            "depth_m": 4.7,
+            "limit_m": 7.5,
+            "pass": true
+          }
+        },
+        "indicative_ach": 5.92,
+        "pass": true,
+        "uses_assumptions": false
+      }
+    ],
+    "internal_windows": [],
+    "unassigned_windows": [],
+    "disclaimer": "Screening aid for design review, not a code-compliance certificate."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ifc-agent": {
+      "command": "python",
+      "args": ["-m", "ifcagent.mcp_server"]
+    }
+  }
+}
