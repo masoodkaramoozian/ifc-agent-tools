@@ -5,7 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ifc-agent-tools"
 version = "0.1.0"
-description = "Dependency-light IFC toolkit + MCP server that lets AI agents do quantity take-off, clash detection and natural-ventilation checks on BIM models"
+description = "AI-agent-enabled BIM research platform: MCP server + IFC analysis for quantity take-off, clash detection and natural-ventilation assessment"
+keywords = ["BIM", "IFC", "AI agents", "MCP", "clash detection", "quantity take-off", "natural ventilation", "building performance"]
 readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "Masood Karamoozian", email = "masood.karamoozian@gmail.com" }]
@@ -13,9 +14,9 @@ requires-python = ">=3.10"
 dependencies = ["numpy>=1.24"]
 
 [project.optional-dependencies]
-mcp = ["mcp>=1.2"]
+mcp = ["mcp>=1.2,<2"]
 plots = ["matplotlib>=3.7"]
-all = ["mcp>=1.2", "matplotlib>=3.7"]
+all = ["mcp>=1.2,<2", "matplotlib>=3.7"]
 
 [project.scripts]
 ifcagent = "ifcagent.cli:main"

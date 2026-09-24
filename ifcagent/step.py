@@ -134,6 +134,13 @@ def _tokens(text: str):
 
 def parse_data(text: str) -> dict[int, Entity]:
     """Parse the DATA section of an SPF file into ``{id: Entity}``."""
+    try:
+        return _parse_data(text)
+    except StopIteration:
+        raise StepSyntaxError("unexpected end of file (truncated IFC?)") from None
+
+
+def _parse_data(text: str) -> dict[int, Entity]:
     text = _COMMENT.sub("", text)
     start = text.find("DATA;")
     end = text.rfind("ENDSEC;")

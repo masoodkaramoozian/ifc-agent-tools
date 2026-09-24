@@ -10,7 +10,13 @@ from __future__ import annotations
 
 import os
 
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.fastmcp import FastMCP
+except ModuleNotFoundError as exc:  # mcp 2.x renamed FastMCP -> MCPServer
+    raise ModuleNotFoundError(
+        "ifc-agent-tools currently targets the MCP Python SDK 1.x. "
+        'Install a compatible version with:  pip install "mcp>=1.2,<2"'
+    ) from exc
 
 from .clash import detect_clashes as _clashes
 from .model import IfcModel

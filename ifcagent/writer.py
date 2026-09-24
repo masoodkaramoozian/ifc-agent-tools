@@ -115,5 +115,5 @@ class IfcWriter:
             "DATA;",
         ]
         footer = ["ENDSEC;", "END-ISO-10303-21;", ""]
-        with open(path, "w", encoding="ascii") as f:
+        with open(path, "w", encoding="ascii", newline="\n") as f:
             f.write("\n".join(header + self.lines + footer))
