@@ -59,7 +59,7 @@ is no CAD kernel and no `ifcopenshell`, so it installs anywhere, including sandb
 ## Quick start
 
 ```bash
-git clone https://github.com/<you>/ifc-agent-tools && cd ifc-agent-tools
+git clone https://github.com/<masoodkaramoozian>/ifc-agent-tools && cd ifc-agent-tools
 pip install -r requirements.txt
 
 python examples/generate_sample.py                 # writes examples/sample_house.ifc
