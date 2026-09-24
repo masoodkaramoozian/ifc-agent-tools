@@ -7,7 +7,7 @@ and the places where the first approach was changed.
 ## 1. Brief
 
 > Build a small, real tool for an AI agent that works on BIM/IFC. It should do quantity take-off and clash
-> detection, add a natural-ventilation check that connects to my Indoor Air (2025) window-opening research,
+> detection, add a natural-ventilation check that connects to my Indoor Air (2026) window-ventilation research,
 > expose it to agents over MCP, and test it.
 
 ## 2. Constraint that shaped the design

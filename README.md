@@ -46,7 +46,7 @@ performance review directly from IFC models. The engineer states the goal and th
 number comes from deterministic, testable tools rather than from the language model.
 
 The natural-ventilation workflow builds on my earlier research into occupant window-opening behaviour and indoor
-environmental quality (Karamoozian et al., *Journal of Indoor Air*, 2025). BIM gives the physical opening geometry: which
+environmental quality (Karamoozian et al., *Indoor Air*, 2026, [doi:10.1155/ina/3775422](https://doi.org/10.1155/ina/3775422)). BIM gives the physical opening geometry: which
 windows serve which room, how much of each can open, and on which facades. Behaviour models give the probability that
 occupants actually open them. Future work will combine the two to estimate *expected* ventilation performance under
 realistic occupancy scenarios, rather than the best case that prescriptive codes assume.
