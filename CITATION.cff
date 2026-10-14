@@ -1,25 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-type: software
-title: "ifc-agent-tools: an AI-agent-enabled BIM research platform (research prototype)"
-abstract: >-
-  MCP server and Claude Code skill that let AI agents read IFC models, run quantity
-  take-off, clash detection and authored-quantity validation, and screen natural
-  ventilation, with all numbers computed by deterministic, unit-tested tools.
-authors:
-  - family-names: Karamoozian
-    given-names: Masood
-    email: masood.karamoozian@gmail.com
-    orcid: "https://orcid.org/0000-0003-1936-0738"
-repository-code: "https://github.com/masoodkaramoozian/ifc-agent-tools"
+title: "ifc-agent-tools"
+version: "0.1.0"
+date-released: "2026-10-14"
 license: MIT
-version: 0.1.0
-keywords:
-  - BIM
-  - IFC
-  - openBIM
-  - AI agents
-  - Model Context Protocol
-  - clash detection
-  - quantity take-off
-  - natural ventilation
+repository-code: "https://github.com/masoodkaramoozian/ifc-agent-tools"
+authors:
+  - family-names: "Karamoozian"
+    given-names: "Masood"
+    orcid: "https://orcid.org/0000-0003-1936-0738"
