@@ -58,6 +58,14 @@ Open questions this platform is designed to study:
   affect automated building performance assessment, and can agents detect them and report them honestly?
 * How far does BIM-derived opening geometry combined with behaviour models improve on prescriptive ventilation rules?
 
+### Research direction
+
+The current version covers the design and coordination phase of a model. The next step is the operation phase:
+agents that keep a persistent, entity-linked memory of an IFC model (which room, which element, which assumption),
+combine it with sensor data and simulation results, and give recommendations that cite their evidence and state
+their uncertainty. The deterministic tools here are the foundation for that, because they give the agent facts it
+can check rather than facts it has to trust.
+
 ## Architecture
 
 ```mermaid
@@ -269,5 +277,8 @@ If you use this work, please cite the repository:
 Karamoozian, M. (2026). ifc-agent-tools: an AI-agent-enabled BIM research platform (research prototype).
 https://github.com/masoodkaramoozian/ifc-agent-tools
 ```
+
+GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff). Author ORCID:
+[0000-0003-1936-0738](https://orcid.org/0000-0003-1936-0738).
 
 MIT licence · Masood Karamoozian · masood.karamoozian@gmail.com
